@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+         <ul class="accordion collapsible" data-collapsible="accordion">
+             {% for task in tasks %}
+                 <li>
+                     <div class="collapsible-header">
+                         <div class="col s12">
+                             <div class="col s2 m1">
+                                 {% if task.important == none %}
+                                     <i class="small material-icons important-task">favorite_border</i>
+                                        {% else %}
+                                     <i class="small material-icons important-task">favorite</i>
+                                 {% endif %}
+                             </div>
+                             <div class="col s4 m2">
+                                 {{ task.due_day }}
+                             </div>
+                             <div class="task-name col s12 m9">
+                                 <strong>{{ task.name }}</strong>
+                             </div>
+
+
+                             <div class="col s12 m2 offset-s2 offset-m5">
+                                 <div class="col s2 m4">
+                                    <form action="{{ url_for('task_done', task_id=task._id)}}" method="POST">
+                                        <button class="btn-done" type="submit"><i class="small material-icons">done</i></button>
+                                    </form>
+                                 </div>
+                                 <div class="col s2 m4">
+                                    <a class="btn-edit" href="{{ url_for('edit_task', task_id=task._id) }}"><i class="small material-icons">edit</i></a>
+                                 </div>
+                                 <div class="col s2 m4">
+                                    <a class="btn-delete" href="{{ url_for('delete_task', task_id=task._id) }}"><i class="small material-icons">delete</i></a>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+
+                     <div class="collapsible-body">
+                         {% if task.progress == 100 %}
+                            <p><small class="complete-task">Status: </small><small>Completed</small></p>
+                         {% else %}
+                            <p>
+                                <small><a class="active-link" href="{{url_for('all_tasks_progress', task_id=task._id)}}">Status[%]: </a></small>
+                                <small>{{ task.progress }}</small></p>
+                        {% endif %}
+                        <p class="description">{{ task.description }}</p>
+                     </div>
+                 </li>
+             {% endfor %}
+         </ul>
+    </div>
+</div>
+{% endblock %}

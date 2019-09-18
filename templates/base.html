@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" type="text/css" />
+    <title>{{ title }}</title>
+</head>
+<body>
+    <nav class="nav-css">
+        <div class="nav-wrapper">
+            <a href="{{ url_for('all_tasks') }}" class="brand-logo center">Tasker</a>
+            <ul class="left">
+                <li><a class="btn-add btn-floating btn-medium waves-effect waves-light red" href="{{ url_for('add_task') }}"><i class="medium material-icons">add</i></a></li>
+            </ul>
+        </div>
+    </nav>
+{% block content %}
+{% endblock %}
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h5 class="title">Add Task</h5>
+            <form action="" method="post" enctype="multipart/form-data">
+                {{ form.csrf_token }}
+                <p>Task name: {{ form.name }}</p>
+                <p>Short description: {{ form.description }}</p>
+                <p class="due-day">Due: {{ form.due_day }}</p>
+                <div class="switch">
+                    <label>
+                        Important
+                        <input type="checkbox" value="{{ form.important }}">
+                        <span class="lever"></span>
+                    </label>
+                </div>
+                <p>{{ form.submit(class_="btn-add-form waves-effect waves-light btn") }}</p>
+            </form>
+    </div>
+</div>
+{% endblock %}

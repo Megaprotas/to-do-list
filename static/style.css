@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+
+h5, p, a, form {
+    font-family: Questrial, sans-serif;
+}
+
+nav {
+    background-color: #5cb85c;
+}
+
+.btn-add i class {
+    margin-left: 3%;
+}
+
+.btn-done {
+    background-color: transparent;
+    border: none;
+    color: #5cb85c;
+}
+
+.btn-done:hover {
+    color: #000000;
+}
+
+.btn-edit i class {
+    color: #0275d8;
+}
+
+.btn-edit:hover {
+    color: #000000
+}
+
+.btn-delete {
+    color: #d9534f;
+}
+
+.btn-delete:hover {
+    color: #000000;
+}
+
+.collapsible-header:hover {
+    background-color: #E8E8E8;
+}
+
+.collapsible-body {
+    text-align: justify;
+}
+
+.title {
+    text-align: center;
+}
+
+.btn-add-form {
+    background-color: #5cb85c;
+    width: 10%;
+}
+
+.btn-add-form input {
+    color: #ffffff;
+}
+
+.btn-edit-form {
+    background-color: #0275d8;
+    width: 10%;
+}
+
+.btn-edit-form input {
+    color: #ffffff;
+}
+
+.delete-form {
+    text-align: center;
+}
+
+.btn-delete-form {
+    background-color: #d9534f;
+    width: 10%;
+}
+
+.btn-delete-form input {
+    color: #ffffff;
+}
+
+.btn-cancel-form {
+    background-color: #0275d8;
+    width: 10%;
+}
+
+.btn-cancel-form a {
+    color: #ffffff;
+}
+
+.description {
+    text-align: justify;
+}
+
+.task-name {
+    margin-bottom: 2%;
+    text-align: justify;
+}
+
+.description {
+    text-align: justify;
+}
+
+.active-link {
+    color: #d9534f;
+}
+
+.active-link:hover {
+    color: #000000;
+}
+
+.complete-task {
+    color: #5cb85c;
+}
+
+.due-day {
+    width: 15%;
+}
+
+@media only screen and (max-width: 600px) {
+     .btn-add-form,
+     .btn-delete-form,
+     .btn-cancel-form,
+     .btn-edit-form {
+         width: 40%;
+    }
+
+    .due-day {
+        width: 40%;
+    }
+}
